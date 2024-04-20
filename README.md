@@ -2,7 +2,7 @@
 
 Execute these commands sequentially to run this app on your local docker:
 ```
-docker build -t storyweb
+docker build -t storyweb .
 docker run -p 3000:3000 storyweb
 ```
 
