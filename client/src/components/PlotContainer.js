@@ -1,11 +1,15 @@
 import React from "react";
 
-const PlotContainer = ({ plot }) => {
+const PlotContainer = ({ paragraph, keywords }) => {
   return (
     <div className="plot-container">
-      <h2>Generated Plot</h2>
+      <p>{paragraph}</p>
       <br />
-      <p>{plot}</p>
+      <ul>
+        {keywords.map((keyword, index) => (
+          <li key={index}>{keyword}</li>
+        ))}
+      </ul>
     </div>
   );
 };

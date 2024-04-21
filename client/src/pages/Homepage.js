@@ -3,19 +3,25 @@ import Input from "../components/Input";
 import PlotContainer from "../components/PlotContainer";
 
 const Homepage = () => {
-  const [plot, setPlot] = useState("");
+  const [plots, setPlots] = useState([]);
 
-  const handlePlotGenerated = (newPlot) => {
-    setPlot(newPlot);
+  const handlePlotGenerated = (newPlots) => {
+    setPlots(newPlots);
     document.querySelector(".input-container").classList.add("shrink");
   };
 
   return (
     <div>
       <Input onPlotGenerated={handlePlotGenerated} />
-      {plot && (
+      {plots.length > 0 && (
         <div className="plot-wrapper">
-          <PlotContainer plot={plot} />
+          {plots.map((plot, index) => (
+            <PlotContainer
+              key={index}
+              paragraph={plot.paragraph}
+              keywords={plot.keywords}
+            />
+          ))}
         </div>
       )}
     </div>
