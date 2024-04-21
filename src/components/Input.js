@@ -31,7 +31,7 @@ const Input = ({ onPlotGenerated }) => {
         value={prompt}
         onChange={handleInputChange}
       />
-      <button className="create" onClick={handleSubmit}>
+      <button className="create-button" onClick={handleSubmit}>
         <FontAwesomeIcon icon={faPaperPlane} />
       </button>
     </div>
