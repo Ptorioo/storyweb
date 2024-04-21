@@ -1,17 +1,9 @@
 # Story Web
 
-- Execute these commands sequentially to run this app on your local docker:
+- Execute the following command at root directory to run this app on your local docker:
 ```
-docker build -t storyweb .
-docker run -p 3000:3000 storyweb
+docker-compose up
 ```
+Make sure you have docker compose installed, however you can also build each part with its own Dockerfile as well.
 
-Or utilize shortcut commands by running the makefile.
-
-- Execute these commands sequentially to compile and run a static production build:
-
-```
-npm run build
-npm install -g serve
-serve -s build
-```
+Server will be listening on port 5000 and webpage will be on port 3000
