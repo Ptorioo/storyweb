@@ -17,6 +17,8 @@ app.post("/generate-plot", async (req, res) => {
     const response = await anthropic.messages.create({
       max_tokens: 1024,
       model: "claude-3-opus-20240229",
+      system:
+        "Generate a story with four paragraphs based on user prompts. After each paragraph, include keywords describing the visual scene from the previous paragraph.",
       messages: [{ role: "user", content: prompt.toString() }],
     });
 
