@@ -32,8 +32,19 @@ body {
   height: 900px;
   transition: height 1s ease;
 }
-.input-container.shrink {
+.input-container.loading {
+  height: 500px;
+}
+.input-container.loading .input-wrapper {
+  position: relative;
+  top: 200px;
+}
+.input-container.loading.shrink {
   height: 200px;
+}
+.input-container.loading.shrink .input-wrapper {
+  position: relative;
+  top: 0px;
 }
 
 .create-button {
@@ -86,4 +97,16 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 380px;
+  margin: 10px;
+  transition: height 1s ease;
+}
+.loader-container.expand {
+  height: 680px;
 }/*# sourceMappingURL=style.css.map */

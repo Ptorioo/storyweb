@@ -13,8 +13,6 @@
     }
 }
 
-
-
 .input-container {
     display: flex;
     justify-content: center;
@@ -22,8 +20,21 @@
     height: 900px;
     transition: height 1s ease;
 
-    &.shrink {
-        height: 200px;
+    &.loading {
+        height: 500px;
+        
+        .input-wrapper {
+            position: relative;
+            top: 200px;
+        }
+        &.shrink {
+            height: 200px;
+
+            .input-wrapper {
+                position: relative;
+                top: 0px;
+            }
+        }
     }
 }
 
@@ -42,4 +53,3 @@
         background-color: #0063ce;
     }
 }
-  

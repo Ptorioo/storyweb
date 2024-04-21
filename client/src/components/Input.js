@@ -3,7 +3,7 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
-const Input = ({ onPlotGenerated }) => {
+const Input = ({ onPlotGenerated, onLoading }) => {
   const [prompt, setPrompt] = useState("");
 
   const handleInputChange = (event) => {
@@ -12,6 +12,7 @@ const Input = ({ onPlotGenerated }) => {
 
   const handleSubmit = async () => {
     try {
+      onLoading();
       const response = await axios.post("http://localhost:5000/generate-plot", {
         prompt,
       });
@@ -24,16 +25,18 @@ const Input = ({ onPlotGenerated }) => {
 
   return (
     <div className="input-container">
-      <input
-        type="text"
-        className="input"
-        placeholder="Enter your prompt..."
-        value={prompt}
-        onChange={handleInputChange}
-      />
-      <button className="create-button" onClick={handleSubmit}>
-        <FontAwesomeIcon icon={faPaperPlane} />
-      </button>
+      <div className="input-wrapper">
+        <input
+          type="text"
+          className="input"
+          placeholder="Enter your prompt..."
+          value={prompt}
+          onChange={handleInputChange}
+        />
+        <button className="create-button" onClick={handleSubmit}>
+          <FontAwesomeIcon icon={faPaperPlane} />
+        </button>
+      </div>
     </div>
   );
 };
