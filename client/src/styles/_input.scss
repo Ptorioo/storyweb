@@ -17,11 +17,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 900px;
+    height: 865px;
     transition: height 1s ease;
 
     &.loading {
-        height: 500px;
+        height: 400px;
         
         .input-wrapper {
             position: relative;

@@ -16,8 +16,13 @@ const Homepage = () => {
 
   const handleLoading = () => {
     setLoading(true);
-    document.querySelector(".input-container").classList.add("loading");
-    setLoaderClass("expand");
+    const inputContainer = document.querySelector(".input-container");
+    if (inputContainer && inputContainer.classList.contains("shrink")) {
+      setLoaderClass("expand");
+    }
+    if (inputContainer) {
+      inputContainer.classList.add("loading");
+    }
   };
 
   return (
@@ -26,11 +31,7 @@ const Homepage = () => {
       {!loading && plots.length > 0 && (
         <div className="plot-wrapper">
           {plots.map((plot, index) => (
-            <PlotContainer
-              key={index}
-              paragraph={plot.paragraph}
-              keywords={plot.keywords}
-            />
+            <PlotContainer key={index} paragraph={plot.paragraph} />
           ))}
         </div>
       )}
