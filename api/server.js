@@ -23,7 +23,9 @@ app.post("/generate-plot", async (req, res) => {
     });
 
     const plot = tokenize(response.content[0].text);
-    res.json({ plot: plot });
+    res.json({
+      plot: plot,
+    });
   } catch (error) {
     console.error("Error generating plot:", error);
     res.status(500).json({ error: "Failed to generate plot" });

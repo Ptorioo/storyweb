@@ -29,22 +29,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 865px;
+  height: 565px;
   transition: height 1s ease;
 }
-.input-container.loading {
-  height: 400px;
-}
-.input-container.loading .input-wrapper {
+.input-container .input-wrapper {
   position: relative;
-  top: 200px;
+  top: 150px;
+  transition: all 1s ease;
 }
-.input-container.loading.shrink {
+.input-container.shrink {
   height: 200px;
 }
-.input-container.loading.shrink .input-wrapper {
+.input-container.shrink .input-wrapper {
   position: relative;
-  top: 0px;
+  top: 0;
 }
 
 .create-button {
@@ -90,25 +88,18 @@ body {
 }
 
 .plot-wrapper {
-  padding: 20px;
-  width: 60%;
-  min-height: 700px;
-  margin: 0px auto;
+  width: 900px;
+  min-height: 650px;
+  margin: 0px 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  overflow: clip;
 }
 
-.loader-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 445px;
-  margin: 10px;
-  transition: height 1s ease;
-}
-.loader-container.expand {
-  height: 645px;
+.loader-positioner {
+  position: relative;
+  top: -100px;
 }
 
 nav {
@@ -123,4 +114,17 @@ nav a {
   font-size: 1.25rem;
   text-decoration: none;
   color: rgb(149, 205, 255);
+}
+
+.mid-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-top: 5px;
+  height: 295px;
+  transition: height 1s ease;
+}
+.mid-section.expand {
+  height: 660px;
 }/*# sourceMappingURL=style.css.map */

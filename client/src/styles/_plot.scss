@@ -9,12 +9,12 @@
 }
 
 .plot-wrapper {
-  padding: 20px;
-  width: 60%;
-  min-height: 700px;
-  margin: 0px auto;
+  width: 900px;
+  min-height: 650px;
+  margin: 0px 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  overflow: clip;
 }
 

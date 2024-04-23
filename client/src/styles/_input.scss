@@ -17,26 +17,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 865px;
+    height: 565px;
     transition: height 1s ease;
+    
+    .input-wrapper {
+        position: relative;
+        top: 150px;
+        transition: all 1s ease;
+    }
 
-    &.loading {
-        height: 400px;
-        
+    &.shrink {
+        height: 200px;
+
         .input-wrapper {
             position: relative;
-            top: 200px;
-        }
-        &.shrink {
-            height: 200px;
-
-            .input-wrapper {
-                position: relative;
-                top: 0px;
-            }
+            top: 0;
         }
     }
 }
+
+
 
 .create-button {
     margin: 10px;

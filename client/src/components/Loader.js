@@ -1,18 +1,20 @@
 import React from "react";
 import { Bars } from "react-loader-spinner";
 
-const Loader = ({ className }) => {
+const Loader = () => {
   return (
-    <div className={`loader-container ${className}`}>
-      <Bars
-        height="60"
-        width="80"
-        color="rgb(230, 230, 230)"
-        ariaLabel="bars-loading"
-        wrapperStyle={{}}
-        wrapperClass=""
-        visible={true}
-      />
+    <div className="loader-container">
+      <div className="loader-positioner">
+        <Bars
+          height="60"
+          width="80"
+          color="rgb(230, 230, 230)"
+          ariaLabel="bars-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+        />
+      </div>
     </div>
   );
 };
