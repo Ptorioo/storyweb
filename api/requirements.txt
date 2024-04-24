@@ -1,0 +1,7 @@
+anthropic==0.25.6
+diffusers==0.27.2
+Flask==3.0.3
+Flask_Cors==4.0.0
+python-dotenv==1.0.1
+torch==2.1.2+cu118
+waitress==2.1.2

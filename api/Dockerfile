@@ -1,7 +1,6 @@
-FROM node:18-alpine
+FROM python:3.11-slim
 WORKDIR /app
-COPY package*.json ./
-RUN npm install --production
 COPY . .
+RUN pip3 install --default-timeout=100 -r requirements.txt
 EXPOSE 5000
-CMD ["npm", "start"]
+CMD ["python3", "main.py"]

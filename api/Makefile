@@ -34,11 +34,11 @@ endef
 export HELP_BODY
 
 build:
-	docker build -t storyweb .
+	docker build -t storyweb-api .
 .PHONY: build
 
 run:
-	docker run -p 3000:3000 storyweb
+	docker run -p 5000:5000 storyweb-api
 .PHONY: run
 
 prune:
