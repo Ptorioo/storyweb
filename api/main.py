@@ -13,7 +13,7 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app)
 
-## pipe = getPipe()
+pipe = getPipe()
 
 client = anthropic.Anthropic(
     api_key=os.environ.get("ANTHROPIC_API_KEY"),
@@ -26,7 +26,7 @@ def generate_plot():
 
     try:
         plot = getPlot(client, prompt)
-        ## getImage(plot, pipe)
+        getImage(plot, pipe)
         
         return jsonify({"plot": plot}), 200
     except Exception as e:

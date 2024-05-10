@@ -1,6 +1,7 @@
-FROM python:3.11-slim
+FROM python:3.12-slim
 WORKDIR /app
 COPY . .
-RUN pip3 install --default-timeout=100 -r requirements.txt
+RUN python3 -m pip install --upgrade pip
+RUN pip install -r requirements.txt
 EXPOSE 5000
 CMD ["python3", "main.py"]
