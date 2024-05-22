@@ -6,7 +6,12 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { Box } from "@mui/material";
 import Typography from "@mui/material/Typography";
 
-function Footer({ links }) {
+function Footer({
+  links = [
+    { href: "/", name: "About Us" },
+    { href: "/", name: "License" },
+  ],
+}) {
   const renderLinks = () =>
     links.map((link) => (
       <Box key={link.name} component="li" px={2} lineHeight={1}>
@@ -62,13 +67,6 @@ function Footer({ links }) {
     </Box>
   );
 }
-
-Footer.defaultProps = {
-  links: [
-    { href: "/", name: "About Us" },
-    { href: "/", name: "License" },
-  ],
-};
 
 Footer.propTypes = {
   links: PropTypes.arrayOf(PropTypes.object),
