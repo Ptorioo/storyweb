@@ -1,20 +1,18 @@
 version: '3.8'
 
 services:
-#  api:
-#    build:
-#      context: ./api
-#      dockerfile: Dockerfile
-#    ports:
-#      - "5000:5000"
-#    volumes:
-#      - ./api:/app
-
   client:
     build:
       context: ./client
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
-    volumes:
-      - ./client:/app
+    depends_on:
+      - api
+
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"

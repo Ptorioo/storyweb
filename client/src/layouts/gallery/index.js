@@ -1,12 +1,12 @@
 import React from "react";
 import { Box } from "@mui/material";
-import ModalPopUp from "components/ModalPopUp";
+import StoryCard from "./components/StoryCard";
 import Footer from "components/Footer";
 
 function Gallery() {
   return (
     <Box>
-      <ModalPopUp />
+      <StoryCard />
       <Footer />
     </Box>
   );

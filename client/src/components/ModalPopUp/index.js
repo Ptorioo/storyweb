@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Box, Button } from "@mui/material";
+import React from "react";
+import { Button } from "@mui/material";
 import {
   Dialog,
   DialogTitle,
@@ -8,33 +8,28 @@ import {
   DialogActions,
 } from "@mui/material";
 
-const ModalPopUp = () => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
+const ModalPopUp = ({ open, handleClose, story }) => {
   return (
-    <Box>
-      <Button color="primary" variant="contained" onClick={handleOpen}>
-        Open
-      </Button>
-      <Dialog open={open} onClose={handleClose} fullWidth>
-        <DialogTitle>Screen</DialogTitle>
-        <DialogContent>
-          <DialogContentText>Test</DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button color="error" variant="contained" onClick={handleClose}>
-            Close
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </Box>
+    <Dialog open={open} onClose={handleClose} fullWidth>
+      <DialogTitle>{story.title}</DialogTitle>
+      <DialogContent>
+        {story.entries.map((entry, index) => (
+          <div key={index}>
+            <img
+              src={`http://localhost:5000/uploads/${entry.image}`}
+              alt={entry.text}
+              style={{ width: "100%", marginBottom: "10px" }}
+            />
+            <DialogContentText>{entry.text}</DialogContentText>
+          </div>
+        ))}
+      </DialogContent>
+      <DialogActions>
+        <Button color="error" variant="contained" onClick={handleClose}>
+          Close
+        </Button>
+      </DialogActions>
+    </Dialog>
   );
 };
 
