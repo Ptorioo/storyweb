@@ -4,6 +4,7 @@ import SubmitButton from "./components/SubmitButton";
 import ImageUploader from "./components/ImageUploader";
 import Footer from "components/Footer";
 import { TextField, Box } from "@mui/material";
+import bgImage from "assets/bg-1.jpg";
 
 function Dashboard() {
   const [title, setTitle] = useState("");
@@ -67,34 +68,61 @@ function Dashboard() {
           flexDirection: "column",
           alignItems: "center",
           gap: 2,
+          backgroundImage: `url(${bgImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          minHeight: "91.2vh",
+          padding: 4,
         }}
       >
         <TextField
           value={title}
           onChange={handleTitleChange}
           placeholder="Enter the story title here"
+          sx={{ backgroundColor: "rgba(255, 255, 255, 0.8)", borderRadius: 1 }}
         />
-        {[0, 1, 2, 3].map((index) => (
-          <Box
-            key={index}
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: 1,
-            }}
-          >
-            <ImageUploader
-              onImageUpload={(image) => handleImageUpload(index, image)}
-              reset={reset}
-            />
-            <TextField
-              value={texts[index]}
-              onChange={(e) => handleTextChange(index, e)}
-              placeholder={`Enter your plot...`}
-            />
-          </Box>
-        ))}
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            gap: 4,
+            marginTop: 2,
+            marginBottom: 5,
+          }}
+        >
+          {[0, 1, 2, 3].map((index) => (
+            <Box
+              key={index}
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: 1,
+                maxWidth: "250px",
+                backgroundColor: "rgba(255, 255, 255, 0.8)",
+                borderRadius: 1,
+                padding: 2,
+              }}
+            >
+              <Box>
+                <ImageUploader
+                  onImageUpload={(image) => handleImageUpload(index, image)}
+                  reset={reset}
+                />
+              </Box>
+              <TextField
+                value={texts[index]}
+                onChange={(e) => handleTextChange(index, e)}
+                placeholder={`Enter your plot...`}
+                sx={{
+                  backgroundColor: "rgba(255, 255, 255, 0.8)",
+                  borderRadius: 1,
+                }}
+              />
+            </Box>
+          ))}
+        </Box>
         <SubmitButton onSubmit={handleSubmit} />
       </Box>
       <Footer />

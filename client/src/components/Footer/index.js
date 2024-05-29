@@ -30,7 +30,7 @@ function Footer({
       flexDirection={{ xs: "column", lg: "row" }}
       justifyContent="space-between"
       alignItems="center"
-      mt={4}
+      bgcolor="#45464f"
     >
       <Box
         display="flex"
